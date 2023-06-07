@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Phebe and Chloe web design</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <!-- below one is for http calls -->
+  <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <style>
+    .header {
+      display: flex;
+    }
+
+    .logo {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      float: left;
+    }
+  </style>
+
+
+  <div id="app">
+    <div v-bind:class="headerClass">
+      <img alt="logo" v-bind:src="appLogo" v-bind:class="logoClass" />
+      <h1>Phebe and Chloe web design</h1>
+    </div>
+
+    <br />
+    <h2>Get in touch</h2>
+    <div>
+      <input type="text" v-model.lazy.trim="name" placeholder="name" />
+    </div>
+    <div>
+      <input type="email" v-model.lazy.trim="email" placeholder="email" />
+    </div>
+    <div>
+      <input type="number" v-model.lazy.number="number" placeholder="number" />
+    </div>
+    <div>
+      <textarea v-model.lazy.trim="query" placeholder="query"></textarea>
+    </div>
+    <button v-on:click="submitForm">Submit</button>
+
+    <p v-text="testing"></p>
+    <p>Hello {{name}}</p>
+    <p v-bind:style="appStyle">this should a different colour</p>
+  </div>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        name: '',
+        email: "",
+        number: "",
+        query: "",
+        testing: "123",
+        appLogo: "logo.jpeg",
+        headerClass: "header",
+        logoClass: "logo",
+        appStyle: {
+          color: "#FF6A00",
+          fontFamily: "Verdana"
+        }
+      },
+      methods: {
+        submitForm: function () {
+          alert(this.query);
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>
