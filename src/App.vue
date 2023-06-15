@@ -1,17 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.jpeg" class="logo" />
+  <LandingPage msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LandingPage from "./components/LandingPage.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    LandingPage
   }
-}
+};
 </script>
 
 <style>
@@ -22,5 +22,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+  /* border-radius: 50%; */
+  /* object-fit: cover; */
+  /* float: left; */
 }
 </style>
