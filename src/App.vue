@@ -1,34 +1,58 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.jpeg" class="logo" />
-  <LandingPage msg="Welcome to Your Vue.js App" />
+  <main>
+    <header>
+      <nav>
+        <ul>
+          <li class="nav-item">
+            <router-link :to="{ name:'Home'}">
+              <img alt="logo" src="./assets/logo.jpeg" class="logo" />
+              home
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/contact">contact</router-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <router-view />
+    <footer></footer>
+  </main>
 </template>
 
 <script>
-import LandingPage from "./components/LandingPage.vue";
-
 export default {
-  name: "App",
-  components: {
-    LandingPage
-  }
+  name: "App"
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+main {
+  margin: 0 auto;
+  padding: 30px;
 }
 
 .logo {
-  height: 150px;
-  width: 150px;
+  vertical-align: middle;
+  height: 80px;
+  /* width: 150px; */
   /* border-radius: 50%; */
   /* object-fit: cover; */
   /* float: left; */
+}
+
+ul,
+li {
+  padding: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 5px 10px 5px 0;
+  font-size: 22px;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>
