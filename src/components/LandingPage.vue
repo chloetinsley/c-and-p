@@ -3,6 +3,7 @@
     <h1>Phebe and Chloe web design</h1>
     <div>
       <p>Our services</p>
+      <p>text</p>
       <ul>
         <li v-for="v in services" v-bind:key="v">{{v}}</li>
       </ul>
