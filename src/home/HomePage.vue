@@ -11,21 +11,58 @@
       </div>
       <div class="main">
         <h2>What we do</h2>
-        <ul>
+        <ServiceComponent
+          header="Web Design / Development"
+          subtext="This Service will offer you bla bla bla
+          some more text to make this bigger some more text to make this bigger some more text to make this bigger "
+        />
+        <ServiceComponent header="Marketing" subtext="This Service will offer you bla bla bla" />
+        <ServiceComponent
+          header="Social Media Management"
+          subtext="This Service will offer you bla bla bla 
+          &lt;h4&gt;
+            Bespoke
+          &lt;/h4&gt;
+            bespoke design
+          &lt;h4&gt;
+            Accessibility
+          &lt;/h4&gt;
+            accessible to everyonnee
+          &lt;h4&gt;
+            SEO
+          &lt;/h4&gt;
+    
+            get you up high on them google rankz
+
+          &lt;h4&gt;
+            Performance
+          &lt;/h4&gt;
+            we use high end up to date technologies to ensure you got da best performance
+          "
+        />
+        <ServiceComponent
+          header="Content Creation"
+          subtext="This Service will offer you bla bla bla need lots and lots of text so this gets bigger so I can test out the functionality of the show more button to make sure it doesn't show more for all oehfihiw ehwoifhwe"
+        />
+        <!-- <ul>
           <li v-for="v in services" v-bind:key="v">{{v}}</li>
-        </ul>
+        </ul>-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ServiceComponent from "./ServiceComponent.vue";
+
 export default {
   name: "HomePage",
   props: {
     msg: String
   },
-  components: {},
+  components: {
+    ServiceComponent
+  },
   data() {
     return {
       services: ["Service 1", "Service 2", "Service 3"]

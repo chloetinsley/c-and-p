@@ -9,7 +9,7 @@
         </router-link>
         <!-- </li>
         </ul>-->
-        <li class="nav-item" style="float:right; margin-top:10px;">
+        <li v-if="isContact" class="nav-item" style="float:right; margin-top:10px;">
           <router-link to="/contact">
             <button class="quote-button">Get a Quote</button>
           </router-link>
@@ -66,7 +66,13 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  computed: {
+    isContact() {
+      return this.$route.name !== "Contact";
+      // return true;
+    }
+  }
 };
 </script>
 
@@ -165,7 +171,7 @@ li {
 }
 .social-media-logo {
   display: flex;
-  height: 18px;
+  height: 20px;
   vertical-align: middle;
   margin-left: 8px;
 
