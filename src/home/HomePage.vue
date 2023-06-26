@@ -27,6 +27,11 @@
           <router-link to="/contact">
             <button class="quote-button">Get a Quote</button>
           </router-link>
+
+          <p
+            v-on:click="viewServices()"
+            style="  margin:10px; text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1.5px"
+          >view our services</p>
         </div>
       </div>
       <div class="main">
@@ -82,6 +87,12 @@ export default {
   },
   components: {
     ServiceComponent
+  },
+  methods: {
+    viewServices() {
+      var target = document.getElementsByTagName("h2")[0];
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   },
   data() {
     return {
@@ -145,9 +156,10 @@ ul {
   margin: 0 auto;
   /* top: 50%; */
   z-index: 2;
+  height: 100%;
   padding-top: 25%;
   /* position: absolute;
-  top: 25%; */
+  /* /* top: 25%;  */
   /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -159,6 +171,7 @@ ul {
   width: 200px;
   height: 200px;
   margin: 0;
+
   /* z-index: 2; */
   /* transform: translateY(50vh); */
 }
