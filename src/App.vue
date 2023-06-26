@@ -1,7 +1,7 @@
 <template>
   <main>
     <header>
-      <nav>
+      <nav v-if="isHome">
         <!-- <ul>
         <li class="nav-item">-->
         <router-link :to="{ name:'Home'}">
@@ -70,6 +70,9 @@ export default {
   computed: {
     isContact() {
       return this.$route.name !== "Contact";
+    },
+    isHome() {
+      return this.$route.name !== "Home";
       // return true;
     }
   }
