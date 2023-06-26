@@ -1,5 +1,5 @@
 <template>
-  <form ref="form" @submit.once="submitForm(this)">
+  <form ref="form" @submit.prevent="submitForm()">
     <div class="contact">
       <h2>Get in touch</h2>
       <div class="input-item">
@@ -45,24 +45,22 @@ export default {
   },
   methods: {
     submitForm() {
-      var boole = false;
-      if (boole) {
-        emailjs
-          .sendForm(
-            "service_kqm07xm",
-            "template_gf2boni",
-            this.$refs.form,
-            "HJmKkgF-p3H3PrzLe"
-          )
-          .then(
-            result => {
-              console.log("SUCCESS!", result.text);
-            },
-            error => {
-              console.log("FAILED...", error.text);
-            }
-          );
-      }
+      console.log("is this worki");
+      emailjs
+        .sendForm(
+          "service_kqm07xm",
+          "template_gf2boni",
+          this.$refs.form,
+          "HJmKkgF-p3H3PrzLe"
+        )
+        .then(
+          result => {
+            console.log("SUCCESS!", result.text);
+          },
+          error => {
+            console.log("FAILED...", error.text);
+          }
+        );
 
       //   if (this.query) {
       //     alert(this.query);
