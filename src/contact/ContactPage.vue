@@ -1,25 +1,38 @@
 <template>
-  <form action="#" method="POST">
+  <form ref="form" @submit.once="submitForm(this)">
     <div class="contact">
       <h2>Get in touch</h2>
       <div class="input-item">
-        <input type="text" v-model.lazy.trim="name" v-on:keyup.enter="test" placeholder="name" />
+        <input
+          name="customer_name"
+          type="text"
+          v-model.lazy.trim="name"
+          v-on:keyup.enter="test"
+          placeholder="name"
+        />
       </div>
       <div class="input-item">
-        <input type="email" v-model.lazy.trim="email" placeholder="email" />
+        <input name="customer_email" type="email" v-model.lazy.trim="email" placeholder="email" />
       </div>
       <div class="input-item">
-        <input type="number" v-model.lazy.number="number" placeholder="number" />
+        <input
+          name="customer_phone_number"
+          type="number"
+          v-model.lazy.number="number"
+          placeholder="number"
+        />
       </div>
       <div class="input-item">
-        <textarea v-model.lazy.trim="query" placeholder="query"></textarea>
+        <textarea name="message" v-model.lazy.trim="query" placeholder="query"></textarea>
       </div>
-      <button type="submit" class="submit" v-on:click.prevent="submitForm()">Submit</button>
+      <button type="submit" class="submit">Submit</button>
     </div>
   </form>
 </template>
 
 <script>
+import emailjs from "@emailjs/browser";
+
 export default {
   name: "ContactPage",
   data() {
@@ -32,11 +45,30 @@ export default {
   },
   methods: {
     submitForm() {
-      if (this.query) {
-        alert(this.query);
-      } else {
-        alert("enter summin then");
+      var boole = false;
+      if (boole) {
+        emailjs
+          .sendForm(
+            "service_kqm07xm",
+            "template_gf2boni",
+            this.$refs.form,
+            "HJmKkgF-p3H3PrzLe"
+          )
+          .then(
+            result => {
+              console.log("SUCCESS!", result.text);
+            },
+            error => {
+              console.log("FAILED...", error.text);
+            }
+          );
       }
+
+      //   if (this.query) {
+      //     alert(this.query);
+      //   } else {
+      //     alert("enter summin then");
+      //   }
     }
   }
 };
