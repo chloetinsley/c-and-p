@@ -25,13 +25,10 @@
           </p>
 
           <router-link to="/contact">
-            <button class="quote-button">Get a Quote</button>
+            <button class="quote-button">Get in Touch</button>
           </router-link>
 
-          <p
-            v-on:click="viewServices()"
-            style="  margin:10px; text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1.5px"
-          >view our services</p>
+          <p v-on:click="viewServices()" class="view-services">view our services</p>
         </div>
       </div>
       <div class="main">
@@ -39,13 +36,8 @@
         <ServiceComponent
           header="Web Design / Development"
           subtext="This Service will offer you bla bla bla
-          some more text to make this bigger some more text to make this bigger some more text to make this bigger "
-        />
-        <ServiceComponent header="Marketing" subtext="This Service will offer you bla bla bla" />
-        <ServiceComponent
-          header="Social Media Management"
-          subtext="This Service will offer you bla bla bla 
-          &lt;h4&gt;
+          some more text to make this bigger some more text to make this bigger some more text to make this bigger 
+                &lt;h4&gt;
             Bespoke
           &lt;/h4&gt;
             bespoke design
@@ -62,8 +54,12 @@
           &lt;h4&gt;
             Performance
           &lt;/h4&gt;
-            we use high end up to date technologies to ensure you got da best performance
-          "
+            we use high end up to date technologies to ensure you got da best performance"
+        />
+        <ServiceComponent header="Marketing" subtext="This Service will offer you bla bla bla" />
+        <ServiceComponent
+          header="Social Media Management"
+          subtext="This Service will offer you bla bla bla This Service will offer you bla bla bla This Service will offer you bla bla bla  "
         />
         <ServiceComponent
           header="Content Creation"
@@ -130,13 +126,13 @@ ul {
   position: absolute;
   /* list-style: none; */
   display: block;
-  font-size: 40px;
+  font-size: 50px;
   /* width: 40px;
   height: 40px; */
   color: white;
   opacity: 85%;
   /* color: fade(white, 15%); */
-  bottom: -160px;
+  bottom: -150px;
 
   -webkit-animation: square 25s infinite;
   animation: square 25s infinite;
@@ -182,9 +178,9 @@ ul {
 #letter-2 {
   left: 20%;
 
-  width: 80px;
-  height: 80px;
-
+  /* width: 80px;
+  height: 80px; */
+  font-size: 90px;
   animation-delay: 2s;
   animation-duration: 17s;
 }
@@ -196,7 +192,7 @@ ul {
 
 #letter-4 {
   left: 40%;
-  font-size: 60px;
+  font-size: 70px;
   /* width: 60px;
   height: 60px; */
 
@@ -211,7 +207,7 @@ ul {
 
 #letter-6 {
   left: 80%;
-  font-size: 120px;
+  font-size: 130px;
   /* width: 120px;
   height: 120px; */
 
@@ -223,7 +219,7 @@ ul {
   left: 32%;
   /* width: 160px;
       height: 160px; */
-  font-size: 160px;
+  font-size: 170px;
   animation-delay: 7s;
 }
 
@@ -231,7 +227,7 @@ ul {
   left: 55%;
   /* width: 20px;
   height: 20px; */
-  font-size: 20px;
+  font-size: 30px;
   animation-delay: 15s;
   animation-duration: 40s;
 }
@@ -240,7 +236,7 @@ ul {
   left: 25%;
   /* width: 10px;
   height: 10px; */
-  font-size: 10px;
+  font-size: 20px;
   animation-delay: 2s;
   animation-duration: 40s;
   opacity: 70%;
@@ -251,7 +247,7 @@ ul {
   left: 90%;
   /* width: 160px;
       height: 160px; */
-  font-size: 160px;
+  font-size: 170px;
   animation-delay: 11s;
 }
 @-webkit-keyframes square {
@@ -289,8 +285,15 @@ ul {
   /* margin: 0; */
   justify-self: center;
   margin: 0 auto;
+  cursor: pointer;
 }
-
+.view-services {
+  margin: 10px;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1.5px;
+  cursor: pointer;
+}
 .main {
   margin: 30px;
 }
