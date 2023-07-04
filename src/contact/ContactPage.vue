@@ -78,7 +78,7 @@
 </template>
 
 <script>
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 export default {
   name: "ContactPage",
@@ -92,39 +92,33 @@ export default {
   },
   methods: {
     submitForm() {
-      var contact = document.getElementById("contactForm");
-      contact.classList.toggle("hidden");
+      //   setTimeout(function() {
+      //     // var check = document.getElementById("checkmark");
+      //     // check.classList.toggle("hidden");
+      //     // var element = document.getElementById("circleLoader");
+      //     // element.classList.toggle("load-complete");
+      //   }, 500);
 
-      var spinner = document.getElementById("confirmationContainer");
-      spinner.classList.toggle("hidden");
+      emailjs
+        .sendForm(
+          "service_kqm07xm",
+          "template_gf2boni",
+          this.$refs.form,
+          "HJmKkgF-p3H3PrzLe"
+        )
+        .then(
+          result => {
+            var contact = document.getElementById("contactForm");
+            contact.classList.toggle("hidden");
 
-      setTimeout(function() {
-        // var check = document.getElementById("checkmark");
-        // check.classList.toggle("hidden");
-        // var element = document.getElementById("circleLoader");
-        // element.classList.toggle("load-complete");
-      }, 500);
-
-      //   emailjs
-      //     .sendForm(
-      //       "service_kqm07xm",
-      //       "template_gf2boni",
-      //       this.$refs.form,
-      //       "HJmKkgF-p3H3PrzLe"
-      //     )
-      //     .then(
-      //       result => {
-      //         //   $(".circle-loader").toggleClass("load-complete");
-      //         // $(".checkmark").toggle();
-      //         var element = document.getElementById("circle-loader");
-      //         element.classList.toggle("load-complete");
-
-      //         console.log("SUCCESS!", result.text);
-      //       },
-      //       error => {
-      //         console.log("FAILED...", error.text);
-      //       }
-      //     );
+            var spinner = document.getElementById("confirmationContainer");
+            spinner.classList.toggle("hidden");
+            console.log("SUCCESS!", result.text);
+          },
+          error => {
+            console.log("FAILED...", error.text);
+          }
+        );
 
       //   if (this.query) {
       //     alert(this.query);
