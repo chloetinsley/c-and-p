@@ -61,13 +61,14 @@
         <button type="submit" class="submit">Submit</button>
       </div>
 
-      <div id="confirmationContainer" class="hidden">
-        <h4>Thank you!</h4>
-        <p>Your message has been recieved and we will be in touch as soon as possible.</p>
+      <div id="confirmationContainer" class="confirmation hidden">
         <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
           <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
           <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
         </svg>
+        <h3>Thank you!</h3>
+        <p>Your message has been recieved and we will be in touch as soon as possible.</p>
+
         <!-- <div id="circleLoader" class="circle-loader">
           <div id="checkmark" class="checkmark draw hidden"></div>
         </div>-->
@@ -284,6 +285,10 @@ select.did-floating-select::-ms-expand {
   border-right: none;
 }
 
+.confirmation {
+  text-align: center;
+}
+
 .circle-loader {
   margin-bottom: 3.5em;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -368,14 +373,15 @@ select.did-floating-select::-ms-expand {
 }
 
 .checkmark {
-  width: 50px; /* ORIGINALLY 56px */
-  height: 50px; /* ORIGINALLY 56px */
+  width: 40px; /* ORIGINALLY 56px */
+  height: 40px; /* ORIGINALLY 56px */
   border-radius: 50%;
   display: block;
   stroke-width: 2;
-  stroke: #fff;
+  stroke: #7ac142;
   stroke-miterlimit: 10;
-  /* margin: 10% auto; */
+  margin: 10px auto;
+  margin-top: 30px;
   box-shadow: inset 0px 0px 0px #7ac142;
   animation: fill 0.4s ease-in-out 0.4s forwards,
     scale 0.3s ease-in-out 0.9s both;
@@ -404,7 +410,7 @@ select.did-floating-select::-ms-expand {
 }
 @keyframes fill {
   100% {
-    box-shadow: inset 0px 0px 0px 80px #7ac142;
+    /* box-shadow: inset 0px 0px 0px 80px #7ac142; */
   }
 }
 </style>
