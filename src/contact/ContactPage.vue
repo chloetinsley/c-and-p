@@ -57,8 +57,9 @@
       <div class="input-item">
         <textarea name="message" v-model.lazy.trim="query" placeholder="query"></textarea>
         </div>-->
-
-        <button type="submit" class="submit">Submit</button>
+        <div class="button-container">
+          <button type="submit" class="submit">Submit</button>
+        </div>
       </div>
 
       <div id="confirmationContainer" class="confirmation hidden">
@@ -148,8 +149,13 @@ input {
 
 textarea {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  padding-top: 10px !important;
+  height: 72px !important;
 }
-
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
 .submit {
   border: none;
   /* orange (to bright imo) */
@@ -166,7 +172,7 @@ textarea {
   /* display: flex;
 
   align-self: right; */
-  float: right;
+  /* float: right; */
 }
 
 .did-floating-label-content {

@@ -17,7 +17,9 @@
 
         <span id="letter-10" class="letter">c</span>
         <div class="banner">
-          <img alt="logo" src="../assets/logo.jpeg" class="logo" />
+          <div class="logo-container">
+            <img alt="logo" src="../assets/logo.jpeg" class="logo" />
+          </div>
           <p>
             Hi.
             <br />We are Chloe & Phebe, freelancers with
@@ -112,7 +114,11 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-
+.logo-container {
+  display: flex;
+  height: 190px;
+  justify-content: center;
+}
 .intro {
   background-color: #ebebe9;
   text-align: center;
@@ -143,17 +149,17 @@ ul {
 .banner {
   /* transform: translateY(50%); */
   /* position: absolute; */
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   vertical-align: middle;
   justify-content: center;
   box-align: center;
-
+  justify-content: space-between;
   margin: 0 auto;
   /* top: 50%; */
   z-index: 2;
   height: 100%;
-  padding-top: 25%;
+  /* padding-top: 25%; */
   /* position: absolute;
   /* /* top: 25%;  */
   /* display: flex;
@@ -167,7 +173,8 @@ ul {
   width: 200px;
   height: 200px;
   margin: 0;
-
+  padding-top: 30px;
+  padding-bottom: 0;
   /* z-index: 2; */
   /* transform: translateY(50vh); */
 }
@@ -269,14 +276,16 @@ ul {
 
 .intro p {
   margin: 0;
-  padding: 0 30px 30px 30px;
+  padding: 0 30px 0 30px;
   position: relative;
   /* z-index: 2; */
   /* transform: translateY(50vh); */
   text-align: center;
   /* bottom 50vh; */
 }
-
+.view-services {
+  padding-bottom: 30px !important;
+}
 .quote-button {
   position: relative;
   /* transform: translateY(50vh); */
@@ -295,6 +304,7 @@ ul {
   cursor: pointer;
 }
 .main {
+  position: relative;
   margin: 30px;
 }
 

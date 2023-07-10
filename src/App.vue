@@ -93,7 +93,7 @@ body {
 .logo {
   margin-left: 30px;
   vertical-align: middle;
-  height: 80px;
+  height: 100px;
   mix-blend-mode: multiply;
   /* width: 150px; */
   /* border-radius: 50%; */
