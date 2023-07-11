@@ -58,7 +58,9 @@
         <textarea name="message" v-model.lazy.trim="query" placeholder="query"></textarea>
         </div>-->
         <div class="button-container">
-          <button type="submit" class="submit">Submit</button>
+          <button type="submit" class="submit" id="submitButton">
+            <span id="btnText">Submit</span>
+          </button>
         </div>
       </div>
 
@@ -93,6 +95,14 @@ export default {
   },
   methods: {
     submitForm() {
+      var btn = document.getElementById("submitButton");
+      btn.text = "";
+      btn.classList.toggle("button--loading");
+      btn.setAttribute("disabled", true);
+
+      var btnText = document.getElementById("btnText");
+      btnText.classList.toggle("no-opacity");
+      console.log(btn);
       //   setTimeout(function() {
       //     // var check = document.getElementById("checkmark");
       //     // check.classList.toggle("hidden");
@@ -132,6 +142,9 @@ export default {
 </script>
 
 <style scoped>
+.no-opacity {
+  opacity: 0;
+}
 .contact {
   /* border: 1px solid red; */
   /* width: 100%; */
@@ -169,6 +182,7 @@ textarea {
   border-radius: 3px;
   font-size: 14px;
   cursor: pointer;
+  position: relative;
   /* display: flex;
 
   align-self: right; */
@@ -284,7 +298,32 @@ select.did-floating-select::-ms-expand {
   border-radius: 4px 0 0 4px;
   border-right: none;
 }
+/* button */
+.button--loading::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid transparent;
+  border-top-color: #ebebe9;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
 
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* button */
 .confirmation {
   text-align: center;
 }
