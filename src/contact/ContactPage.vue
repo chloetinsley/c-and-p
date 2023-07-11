@@ -2,7 +2,8 @@
   <form ref="form" @submit.prevent="submitForm()">
     <div class="contact">
       <div id="contactForm">
-        <h2>Get in touch</h2>
+        <h2>How can we help you?</h2>
+        <p>We aim to get back to you within 48 working hours</p>
         <div class="did-floating-label-content">
           <input class="did-floating-input" type="text" name="customer_name" placeholder=" " />
           <label class="did-floating-label">Name</label>
@@ -163,7 +164,7 @@ input {
 textarea {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   padding-top: 10px !important;
-  height: 72px !important;
+  height: 100px !important;
 }
 .button-container {
   display: flex;
@@ -180,7 +181,7 @@ textarea {
   padding: 6px 15px;
   color: #ebebe9;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   position: relative;
   /* display: flex;
@@ -195,12 +196,13 @@ textarea {
 }
 .did-floating-label {
   /* color: #3a6963; */
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
+  color: #4b4b4b;
   left: 15px;
-  top: 11px;
+  top: 16px;
   padding: 0 5px;
   background: #fff;
   transition: 0.2s ease all;
@@ -209,12 +211,13 @@ textarea {
 }
 .did-floating-input,
 .did-floating-select {
-  font-size: 12px;
+  font-size: 16px;
   display: block;
   width: 100%;
-  height: 36px;
+  height: 50px;
   padding: 0 20px;
   background: #fff;
+  color: #6d6d6d;
   /* color: green; */
   border: 1px solid #3a6963;
   border-radius: 4px;
