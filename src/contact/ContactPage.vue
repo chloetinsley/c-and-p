@@ -1,7 +1,12 @@
 <template>
-  <form ref="form" @submit.prevent="submitForm()">
+  <form style=" background-color: #ebebe9;" ref="form" @submit.prevent="submitForm()">
     <div class="contact">
-      <div id="contactForm">
+      <div
+        id="contactForm"
+        style="background-color: white;
+    padding: 25px;
+    border-radius: 25px;"
+      >
         <h2>How can we help you?</h2>
         <p>We aim to get back to you within 48 working hours</p>
         <div class="did-floating-label-content">
@@ -143,6 +148,9 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  margin: 0;
+}
 .no-opacity {
   opacity: 0;
 }
@@ -160,6 +168,7 @@ input {
   padding: 10px 0;
   margin: 5px 0;
 }
+
 
 textarea {
   font-family: Avenir, Helvetica, Arial, sans-serif;
